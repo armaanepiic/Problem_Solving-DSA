@@ -29,13 +29,27 @@ using vvs = vector<vector<string>>;
 int dx[8] = {1, -1, 0, 0, 1, 1, -1, -1};
 int dy[8] = {0, 0, 1, -1, 1, -1, 1, -1};
 
+
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    
+    int n;
+    cin >> n;
+    vector<int> v;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        v.push_back(x);
+    }
+    for (int i = 0; i < v.size(); i++)
+        cout << v[i] << ' ';
+    cout << endl;
+    cout << "size = " << v.size() << endl;
 
     return 0;
 }
