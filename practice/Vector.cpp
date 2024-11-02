@@ -37,12 +37,25 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    vector<int> v = {2, 3, 4, 5};
+    // accesing the first element of vector
+    // v.front() or *v.begin()
+    // cout << "First element = " << *v.begin() << endl;
+    cout << "First element = " << v.front() << endl;
+    // v.back() accessing the last element
+    cout << "size = " << v.size() << endl << "last element = " << v.back() << endl;
+    // v.pop_back() delete the last element
+    v.pop_back(); // O(1)
+    cout << "size = " << v.size() << endl
+         << "last element = " << v.back();
 
+    /*
     // reversing a vector
     vector<int> v = {5, 7, 9, 3, 1};
     reverse(v.begin(), v.end());
     for(auto it: v)
         cout << it << ' ';
+    */
 
     /*
     // ----------------------------------------------
