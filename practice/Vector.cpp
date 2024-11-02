@@ -37,6 +37,13 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+
+    // reversing a vector
+    vector<int> v = {5, 7, 9, 3, 1};
+    reverse(v.begin(), v.end());
+    for(auto it: v)
+        cout << it << ' ';
+
     /*
     // ----------------------------------------------
     // sorting a vector
