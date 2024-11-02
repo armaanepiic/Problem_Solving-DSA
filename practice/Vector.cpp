@@ -37,12 +37,49 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    /*
+    // inserting value until 0
+    int n;
+    vector<int> v;
+    while (cin >> n && n != 0)
+    {
+        // if(n == 0)
+        //     break;
+        v.push_back(n);
+    }
+    for (auto &&i : v)
+        cout << i << ' ';
+    */
 
+    /*
+    // for each loop
+    vector<int> v = {1, 2, 3, 4, 5};
+    for (auto it : v) // passed by copy
+        cout << it << ' ';
+    cout << endl;
+    for (auto &it : v) // passed by referece
+        it++;
+    for (auto it : v)
+        cout << it << ' ';
+    */
+
+    /*
+    // range based for loop
+    vector<int> v = {1,2,3,4,5};
+    vector<int>::iterator it;
+    for (it = v.begin(); it != v.end(); it++)
+        cout << *it << ' ';
+    */
+    
+
+
+    /*
     // copying a vector
     vector<int> v = {2, 4, 6, 8};
     vector<int> temp = v;
     cout << "size of v = " << v.size() << endl;
     cout << "size of temp = " << temp.size() << endl;
+    */
 
     /*
     // global array
