@@ -38,6 +38,39 @@ int main()
     cout.tie(NULL);
 
     /*
+    // ----------------------------------------------
+    // sorting a vector
+    // O(n log 2n)
+    // ----------------------------------------------
+    vector<int> v = {5, 7, 9, 3, 1};
+    // sort(v.begin(), v.end());
+    // sort until index 3
+    // sort(v.begin(), v.begin() + 3);
+    // sort 1-3 index
+    // sort(v.begin() + 1, v.begin() + 4);
+    // sorting decreasing order
+    // sort(v.begin(), v.end(), greater<int>());
+    sort(v.rbegin(), v.rend());
+    for(auto it: v)
+        cout << it << " ";
+    cout << endl;
+    */
+
+    /*
+    // ----------------------------------------------
+    //                 sorting an array
+    // ----------------------------------------------
+    int a[] = {9, 7, 5, 3, 1};
+    cout << "Before sort:" << endl;
+    for (auto it : a)
+        cout << it << ' ';
+    sort(a, a + 5);
+    cout << endl << "After sort:" << endl;
+    for(auto it : a)
+        cout << it << ' ';
+    */
+
+    /*
     // inserting value until 0
     int n;
     vector<int> v;
@@ -70,8 +103,6 @@ int main()
     for (it = v.begin(); it != v.end(); it++)
         cout << *it << ' ';
     */
-    
-
 
     /*
     // copying a vector
