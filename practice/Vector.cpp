@@ -29,7 +29,7 @@ using vvs = vector<vector<string>>;
 int dx[8] = {1, -1, 0, 0, 1, 1, -1, -1};
 int dy[8] = {0, 0, 1, -1, 1, -1, 1, -1};
 
-
+int arr[5];
 
 int main()
 {
@@ -37,6 +37,38 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+
+    // copying a vector
+    vector<int> v = {2, 4, 6, 8};
+    vector<int> temp = v;
+    cout << "size of v = " << v.size() << endl;
+    cout << "size of temp = " << temp.size() << endl;
+
+    /*
+    // global array
+    cout << "Global Array: ";
+    for (int i = 0; i < 5; i++)
+        cout << arr[i] << ' ';
+    cout << endl;
+
+    // ----------------------------------------------
+    //         Declaring vector as an array
+    // ----------------------------------------------
+    vector<int> v1(5); // all the values are 0 by default
+    cout << "v1 = ";
+    for (int i = 0; i < 5; i++)
+        cout << v1[i] << ' ';
+    vector<int> v2(5, 2);
+    cout << endl;
+    cout << "v2 = ";
+    for (int i = 0; i < 5; i++)
+        cout << v2[i] << ' ';
+    */
+
+    /*
+    // ----------------------------------------------
+    //                  Vector initialze
+    // ----------------------------------------------
     int n;
     cin >> n;
     vector<int> v;
@@ -46,10 +78,32 @@ int main()
         cin >> x;
         v.push_back(x);
     }
+
     for (int i = 0; i < v.size(); i++)
         cout << v[i] << ' ';
     cout << endl;
     cout << "size = " << v.size() << endl;
+    // ----------------------------------------------
+    //                  v.resize()
+    // ----------------------------------------------
+    v.resize(10);
+    for (int i = 0; i < v.size(); i++)
+        cout << v[i] << ' ';
+    cout << endl;
+    cout << "After using v.resize()" << endl;
+    // ----------------------------------------------
+    //                  v.empty()
+    // ----------------------------------------------
+    cout << "size = " << v.size() << endl;
+    cout << "Empty? = " << v.empty() << endl;
+    cout << "After using v.clear():" << endl;
+    // ----------------------------------------------
+    //                  v.clear()
+    // ----------------------------------------------
+    v.clear();
+    cout << "size = " << v.size() << endl;
+    cout << "Empty? = " << v.empty() << endl;
+    */
 
     return 0;
 }
