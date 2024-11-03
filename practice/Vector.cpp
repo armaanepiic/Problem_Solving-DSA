@@ -37,7 +37,21 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    // unique()
+    vector<int> v = {2, 3, 5, 5, 7, 7, 1};
+    int maxElement = *max_element(v.begin(), v.end());
+    cout << "max = " << maxElement << endl;
+    int indexMaxElement = max_element(v.begin(), v.end()) - v.begin();
+    cout << "index of max = " << indexMaxElement << endl;
+
+    int minElement = *min_element(v.begin(), v.end());
+    cout << "min = " << minElement << endl;
+    int indexMinElement = min_element(v.begin(), v.end()) - v.begin();
+    cout << "index of min = " << indexMinElement << endl;
+
+    /*
+    // ----------------------------------------------
+    // unique(x.begin(), x.end())
+    // ----------------------------------------------
     // find out the number of unique element in a vector
     vector<int> v = {2, 3, 5, 5, 7, 7, 1};
     sort(v.begin(), v.end()); // n(log2n)
@@ -47,7 +61,7 @@ int main()
     for (int i = 0; i < uniqueElements; i++)
         cout << v[i] << ' ';
     cout << endl;
-
+    */
     /*
     // ----------------------------------------------
     // v.erase()
