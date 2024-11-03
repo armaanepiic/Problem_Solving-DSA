@@ -37,6 +37,29 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    // unique()
+    // find out the number of unique element in a vector
+    vector<int> v = {2, 3, 5, 5, 7, 7, 1};
+    sort(v.begin(), v.end()); // n(log2n)
+    //unique(v.begin(), v.end()); // returns the pointer until the last unique value
+    int uniqueElements = unique(v.begin(), v.end()) - v.begin();
+    cout << "unique elements = " << uniqueElements << endl;
+    for (int i = 0; i < uniqueElements; i++)
+        cout << v[i] << ' ';
+    cout << endl;
+
+    /*
+    // ----------------------------------------------
+    // v.erase()
+    // ----------------------------------------------
+    vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    v.erase(v.begin(), v.begin() + 4);
+    cout << "size = " << v.size() << endl;
+    for(auto it: v)
+        cout << it << ' ';
+    */
+
+    /*
     vector<int> v = {2, 3, 4, 5};
     // accesing the first element of vector
     // v.front() or *v.begin()
@@ -48,6 +71,7 @@ int main()
     v.pop_back(); // O(1)
     cout << "size = " << v.size() << endl
          << "last element = " << v.back();
+    */
 
     /*
     // reversing a vector
