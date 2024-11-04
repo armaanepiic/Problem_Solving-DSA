@@ -37,16 +37,33 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    // vector of vector
+    vector<vector<int>> v;
+    vector<int> a1 = {1, 2, 3, 4, 5};
+    vector<int> a2 = {6,7,8,9};
+    v.push_back(a1);
+    v.push_back(a2);
+    for(auto it: v){
+        for(auto iit:it)
+            cout << iit << ' ';
+        cout << endl;
+    }
+
+    /*
+    // ----------------------------------------------
+    // max element and min element
+    // ----------------------------------------------
     vector<int> v = {2, 3, 5, 5, 7, 7, 1};
-    int maxElement = *max_element(v.begin(), v.end());
+    int maxElement = *max_element(v.begin(), v.end()); // O(n)
     cout << "max = " << maxElement << endl;
     int indexMaxElement = max_element(v.begin(), v.end()) - v.begin();
     cout << "index of max = " << indexMaxElement << endl;
 
-    int minElement = *min_element(v.begin(), v.end());
+    int minElement = *min_element(v.begin(), v.end()); // O(n)
     cout << "min = " << minElement << endl;
     int indexMinElement = min_element(v.begin(), v.end()) - v.begin();
     cout << "index of min = " << indexMinElement << endl;
+    */
 
     /*
     // ----------------------------------------------
