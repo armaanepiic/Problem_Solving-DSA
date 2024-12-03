@@ -91,7 +91,7 @@ void Reverse()
         num /= 10;
     }
     cout << rev_num << endl;
-    
+
     // From a string
     string str = "12345";
     int reverse_number = 0;
@@ -103,6 +103,25 @@ void Reverse()
     cout << reverse_number;
 }
 
+void Palindrome(){
+    // Approach: 1
+    // comparing with the reverse version
+    // comparing using loop in time of string
+    string str = "MBABM";
+    bool isPalindrom = true;
+    for (int i = 0; i < str.length() / 2; i++)
+    {
+        if(str[i] != str[str.length()-i-1]){
+            isPalindrom = false;
+            break;
+        }
+    }
+    if(isPalindrom)
+        cout << "Palindrome" << endl;
+    else
+        cout << "Not Palindrome" << endl;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -110,7 +129,8 @@ int main()
     cout.tie(NULL);
 
     // Digit();
-    Reverse();
+    // Reverse();
+    Palindrome();
 
     return 0;
 }
