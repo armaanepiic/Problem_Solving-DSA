@@ -122,6 +122,93 @@ void Palindrome(){
         cout << "Not Palindrome" << endl;
 }
 
+void Armstrong(){
+    // n = number of digits
+    // sum of the power of n of each digit = num
+    int num = 153;
+    int temp = num;
+    int sum = 0;
+    while(temp != 0){
+        int x = temp % 10;
+        sum += x * x * x;
+        temp /= 10;
+    }
+    cout << "sum = " << sum << endl;
+    if (sum == num)
+        cout << "Armstrong Number" << endl;
+    else
+        cout << "Not Armstrong Number" << endl;
+}
+
+void Divisors()
+{
+    // TC: O(sqrt(n))
+    int num = 48;
+    // vector<int> divisors;
+    set<int> s;
+    for (int i = 1; i * i <= num; i++)
+    {
+        if(num % i == 0){
+            // divisors.push_back(i);
+            // divisors.push_back(num / i);
+            s.insert(i);
+            s.insert(num/i);
+        }
+    }
+    // sort TC: O(n log n)
+    // sort(divisors.begin(), divisors.end());
+    // for(auto &it:divisors)
+    //     cout << it << ' ';
+    for(auto &it:s)
+        cout << it << ' ';
+}
+
+void Prime()
+{
+    // Brute Force approach
+    /*
+    // TC : O(n)
+    int num = 5, cnt = 0;
+    bool isPrime = false;
+    for (int i = 1; i <= num; i++)
+    {
+        if(num % i == 0)
+            cnt++;
+    }
+    if(cnt == 2)
+        isPrime = true;
+    if(isPrime)
+        cout << "Prime Number" << endl;
+    else
+        cout << "Not Prime Number" << endl;
+    */
+    // Better Approach
+    // loop till sqrt of num
+    // TC: O(sqrt n)
+    /*
+    int num = 2, cnt = 0;
+    bool isPrime = false;
+    for (int i = 1; i * i <= num; i++)
+    {
+        if (num % i == 0)
+            cnt++;
+        if((num / i) != i)
+            cnt++;
+    }
+    if (cnt == 2)
+        isPrime = true;
+    if (isPrime)
+        cout << "Prime Number" << endl;
+    else
+        cout << "Not Prime Number" << endl;
+    */
+}
+
+void sieve()
+{
+    
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -130,7 +217,10 @@ int main()
 
     // Digit();
     // Reverse();
-    Palindrome();
-
+    // Palindrome()
+    // Armstrong();
+    // Divisors();
+    // Prime();
+    sieve();
     return 0;
 }
