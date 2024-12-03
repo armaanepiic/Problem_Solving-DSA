@@ -78,9 +78,30 @@ void Digit()
     }
     cout << "Sum of digits = " << sum;
     */
-   
+
 }
 
+void Reverse()
+{
+    // reversing a number and store it into another int variable
+    int num = 6789;
+    int rev_num = 0;
+    while(num != 0){
+        rev_num = (rev_num * 10) + (num % 10);
+        num /= 10;
+    }
+    cout << rev_num << endl;
+    
+    // From a string
+    string str = "12345";
+    int reverse_number = 0;
+    for (int i = 0; i < str.length(); i++)
+    {
+        int temp = (int)str[str.length() - i - 1] - 48;
+        reverse_number = (reverse_number * 10) + temp;
+    }
+    cout << reverse_number;
+}
 
 int main()
 {
@@ -88,7 +109,8 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    Digit();
+    // Digit();
+    Reverse();
 
     return 0;
 }
