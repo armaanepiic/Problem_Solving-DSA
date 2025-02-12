@@ -204,9 +204,54 @@ void Prime()
     */
 }
 
+void PrimeFactors(){
+    // TC: O(sqrt(n) * log(n))
+    int num = 15;
+    vector<int> primeFactors;
+
+    for (int i = 2; i * i <= num; i++)
+    {
+        if (num % i == 0)
+        {
+            primeFactors.push_back(i);
+            while (num % i == 0)
+            {
+                num /= i;
+            }
+        }
+    }
+    if (num != 1)
+        primeFactors.push_back(num);
+    sort(all(primeFactors));
+    for (auto &it : primeFactors)
+        cout << it << ' ';
+}
+
 void sieve()
 {
-    
+    // print all primes till num
+    int num = 100;
+    vector<int> primes;
+    vector<int> prime(num + 1, 0);
+    prime[0] = prime[1] = 1;
+    for (int i = 2; i * i <= num; i++)
+    {
+        if (prime[i] == 0)
+        {
+
+            for (int j = i * i; j <= num; j+=i)
+            {
+                prime[j] = 1;
+            }
+        }
+    }
+    // for (int i = 1; i <= num; i++)
+    // {
+    //     if (prime[i] == 0)
+    //         cout << i << ' ';
+    // }
+    for(auto it: primes)
+        cout << it << ' ';
 }
 
 int main()
@@ -221,6 +266,7 @@ int main()
     // Armstrong();
     // Divisors();
     // Prime();
+    // PrimeFactors();
     sieve();
     return 0;
 }
