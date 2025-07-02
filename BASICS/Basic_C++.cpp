@@ -14,13 +14,37 @@ int findMax(int x, int y){
     else 
         return y;
 }
+void increment(int y, string s){ // to pass by ref => int &y
+    cout << y << endl;
+    y += 5;
+    cout << y << endl;
+    y += 5;
+    cout << y << endl;
+    y +=5;
+    s[0] = 't';
+    cout << s << endl;
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    
+    int x = 10;
+    string str = "raj";
+    // pass by value
+    increment(x, str);
+    cout << x << endl << str << endl;
+
+
+
+
+
+
+
+
+
+    /*
     string name;
     cin >> name;
     printName(name);
@@ -34,7 +58,7 @@ int main()
     // cout << "maximum = " << max(num1, num2) << endl;
     // cout << "minimum = "  << min(num1, num2);
     cout << findMax(num1, num2);
-
+*/
     /*
     int i = 2;
     do
