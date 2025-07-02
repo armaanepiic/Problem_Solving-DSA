@@ -1,0 +1,40 @@
+# VS Code settings
+.vscode/
+.cph/
+
+# Compiled Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Compiled Dynamic libraries
+*.so
+# *.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Debug files
+*.dSYM/
+*.pdb
+
+# IDE files
+*.vcxproj
+*.vcxproj.filters
+*.sln
+*.suo
+
+# Build directories
+build/
+bin/
+obj/
+
+# OS generated files
+.DS_Store
+Thumbs.db
