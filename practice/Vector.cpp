@@ -26,15 +26,47 @@ using vvs = vector<vector<string>>;
 int dx[8] = {1, -1, 0, 0, 1, 1, -1, -1};
 int dy[8] = {0, 0, 1, -1, 1, -1, 1, -1};
 
+bool isVowel(char ch)
+{
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+        return true;
+    return false;
+}
+int maxVowels(string &s, int &k)
+{
+    int len = s.length();
+    int cnt = 0, x = 0;
+    for (int i = 0; i < k; i++)
+        if (isVowel(s[i]))
+            x++;
+    cnt = max(cnt, x);
+    int l = 0, r = k-1;
+    cout << "x = " << x << endl;
+    while(r < len-1)
+    {
+        if(isVowel(s[l])){
+            x--;
+        }
+        if(isVowel(s[r+1])){
+            x++;
+        }
+        l++;
+        r++;
+        cnt = max(cnt,x);
+    }
+    cout << cnt;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int x;
-    cin >> x;
-    cout << x + 10;
+    string s;
+    int k;
+    cin >> s >> k;
+    maxVowels(s, k);
 
     return 0;
 }

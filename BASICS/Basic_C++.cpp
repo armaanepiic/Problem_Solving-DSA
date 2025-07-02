@@ -24,19 +24,36 @@ void increment(int &y, string &s){ // to pass by ref => int &y
     s[0] = 't';
     cout << s << endl;
 }
+int passArray(int a[], int n){
+    a[2] = 56;
+    for(int i=0 ; i<5 ; i++){
+        cout << a[i] << ' ';
+    }cout << endl;
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
+
+    // array is passed by reference
+    int a[5] = {1,2,3,4,5};
+    passArray(a, 5);
+    for(int i=0 ; i<5 ; i++){
+        cout << a[i] << ' ';
+    }
+
+
+
+    /*
     int x = 10;
     string str = "raj";
     // pass by value
     increment(x, str);
     cout << x << endl << str << endl;
 
-
+    */
 
 
 
