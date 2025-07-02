@@ -14,7 +14,7 @@ int findMax(int x, int y){
     else 
         return y;
 }
-void increment(int y, string s){ // to pass by ref => int &y
+void increment(int &y, string &s){ // to pass by ref => int &y
     cout << y << endl;
     y += 5;
     cout << y << endl;
@@ -35,7 +35,6 @@ int main()
     // pass by value
     increment(x, str);
     cout << x << endl << str << endl;
-
 
 
 
