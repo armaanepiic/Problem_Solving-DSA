@@ -7,6 +7,38 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    
+    // array
+    int arr_1[5] = {1,2,3,4,5};
+    cout << "array 1: "; 
+    for(int i = 0; i < 5 ; i++)cout << arr_1[i] << ' ';
+    // array copying
+    int arr_2[5];
+    // method 1
+    // for(int i = 0; i < 5; i++)
+    //     arr_2[i] = arr_1[i];
+    // cout << endl;
+    // cout << "array 2: "; 
+    // for(int i = 0; i < 5 ; i++)cout << arr_2[i] << ' ';
+
+    cout << endl << "array 2: "; 
+    copy(arr_1, arr_1+5, arr_2);
+    for(int i = 0; i < 5 ; i++)cout << arr_2[i] << ' ';
+    
+
+    int arr_2d[2][3];
+    for(int i=0 ; i<2 ; i++){
+        for(int j=0 ; j<3 ; j++)
+            cin >> arr_2d[i][j];
+    }
+    for(int i=0 ; i<2 ; i++){
+        for(int j=0 ; j<3 ; j++)
+            cout << arr_2d[i][j] << ' ';
+        cout << endl;
+    }
+
+
+    /*
     // conditions if, else
     int age;
     cin >> age;
@@ -38,7 +70,7 @@ int main()
             cout << "Tuesday";
             break;
         case 5:
-            cout << "Wednessday";
+            cout << "Wednesday";
             break;
         case 6:
             cout << "Thursday";
@@ -51,6 +83,8 @@ int main()
             break;
             // cout << "Check";
     }
+
+    */
 
     /*
 
