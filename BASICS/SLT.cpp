@@ -190,6 +190,26 @@ void Queue()
     }
 
 }
+void Priority_queue()
+{
+    priority_queue <int> pq; // greater element first (max heap)
+    // priority_queue <int, vector<int> , greater<int> > pq; // lower first (min heap)
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        pq.push(x);
+    }
+    // pq.pop();
+    while (!pq.empty())
+    {
+        cout << pq.top() << endl;
+        pq.pop();
+    }
+    cout << "Size = " << pq.size();    
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -201,7 +221,8 @@ int main()
     // List();
     // Deque();
     // Stack();
-    Queue();
+    // Queue();
+    Priority_queue();
 
     return 0;
 }
