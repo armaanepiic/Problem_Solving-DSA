@@ -53,8 +53,8 @@ void Vector()
     v1.insert(v1.begin() + 1, 1, 10);
 
     // insert a vector(copy) into another vector
-    vector <int> copy = {5, 6, 7, 8};
-    v1.insert(v1.begin() + 1 , copy.begin(), copy.end());
+    vector<int> copy = {5, 6, 7, 8};
+    v1.insert(v1.begin() + 1, copy.begin(), copy.end());
 
     // delete an element
     // v1.erase(v1.begin() + 1, v1.begin() +3);
@@ -74,11 +74,12 @@ void Vector()
     cout << endl;
     cout << "Size of the vector: " << v1.size() << endl;
 
-
     // clear a vector
     v1.clear();
-    if(v1.empty()) cout << "Empty vector" << endl;
-    else cout << "Not empty" << endl;
+    if (v1.empty())
+        cout << "Empty vector" << endl;
+    else
+        cout << "Not empty" << endl;
 
     cout << "First element: " << v1.front() << endl;
     cout << "Last element: " << v1.back() << endl;
@@ -104,6 +105,70 @@ void Vector()
         cout << it.first << ' ' << it.second << endl;
     }
 }
+void List()
+{
+    list<int> ls = {1, 2};
+    ls.push_back(3);
+    for (auto &it : ls)
+        cout << it << ' ';
+    // push_back() => insert element at end
+    // push_front() => insert element at the begining
+    // pop_back() => delete element from the end
+    // pop_front() => delete element from the begining
+    cout << endl
+         << "first element: " << ls.front() << endl
+         << "last element: " << ls.back();
+}
+void Deque()
+{
+    int n;
+    cin >> n;
+    deque<int> dq;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        dq.push_back(x);
+    }
+    for (auto &it : dq)
+        cout << it << ' ';
+    // push_back() => insert element at end
+    // push_front() => insert element at the begining
+    // pop_back() => delete element from the end
+    // pop_front() => delete element from the begining
+    cout << endl
+         << "first element: " << dq.front() << endl
+         << "last element: " << dq.back();
+}
+void Stack()
+{
+    // LIFO => Last in First out
+    // push, pop, top, size, empty
+    int n;
+    cin >> n;
+    stack<int> st;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        st.push(x);
+    }
+    cout << "Size of stack: " << st.size() << endl;
+    while (!st.empty())
+    {
+        cout << "Size of stack: " << st.size() << endl;
+        cout << st.top() << endl;
+        st.pop();
+    }
+    cout << "Size of stack: " << st.size() << endl;
+
+    // swapping stack
+    stack <int> st2;
+    st.swap(st2);
+    cout << "Size of stack: " << st2.size() << endl;
+    
+    
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -111,7 +176,10 @@ int main()
     cout.tie(NULL);
 
     // Pair();
-    Vector();
+    // Vector();
+    // List();
+    // Deque();
+    Stack();
 
     return 0;
 }
