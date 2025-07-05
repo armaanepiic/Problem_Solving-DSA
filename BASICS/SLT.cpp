@@ -163,11 +163,32 @@ void Stack()
     cout << "Size of stack: " << st.size() << endl;
 
     // swapping stack
-    stack <int> st2;
+    stack<int> st2;
     st.swap(st2);
     cout << "Size of stack: " << st2.size() << endl;
+}
+void Queue()
+{
+    // FIFO => First IN, First OUT
+    int n;
+    cin >> n;
+    queue<int> q;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        q.push(x);
+    }
+    cout << "Size of queue : " << q.size() << endl;
+
+    cout << "front : " << q.front() << endl << "back : " << q.back() << endl;
     
-    
+    while (!q.empty())
+    {
+        cout << q.front() << " ";
+        q.pop();
+    }
+
 }
 int main()
 {
@@ -179,7 +200,8 @@ int main()
     // Vector();
     // List();
     // Deque();
-    Stack();
+    // Stack();
+    Queue();
 
     return 0;
 }
