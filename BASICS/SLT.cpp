@@ -181,18 +181,18 @@ void Queue()
     }
     cout << "Size of queue : " << q.size() << endl;
 
-    cout << "front : " << q.front() << endl << "back : " << q.back() << endl;
-    
+    cout << "front : " << q.front() << endl
+         << "back : " << q.back() << endl;
+
     while (!q.empty())
     {
         cout << q.front() << " ";
         q.pop();
     }
-
 }
 void Priority_queue()
 {
-    priority_queue <int> pq; // greater element first (max heap)
+    priority_queue<int> pq; // greater element first (max heap)
     // priority_queue <int, vector<int> , greater<int> > pq; // lower first (min heap)
     int n;
     cin >> n;
@@ -208,8 +208,78 @@ void Priority_queue()
         cout << pq.top() << endl;
         pq.pop();
     }
-    cout << "Size = " << pq.size();    
+    cout << "Size = " << pq.size();
 }
+void Set()
+{
+    // everything log(n) TC
+    set<int> st;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        st.insert(x);
+    }
+    // st.insert(6);
+    // clear the whole set
+    // st.clear();
+    // erase an element
+    // st.erase(3);
+    st.erase(st.find(3));
+    // st.find() gives the pointer of the searched number
+
+    for (auto &it : st)
+        cout << it << ' ';
+    cout << "\nsize of set : " << st.size() << endl;
+    if (st.find(6) != st.end())
+        cout << "exist" << endl;
+    else
+        cout << "Doesn't exist\n";
+    // check occurrence
+    cout << st.count(4) << endl;
+
+    set<int> st1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it1 = st1.find(2);
+    auto it2 = st1.find(5);
+    st1.erase(it1, it2);
+    for (auto &it : st1)
+        cout << it << ' ';
+    cout << endl;
+}
+void Multiset()
+{
+    multiset<int> ms = {1, 2, 3, 4, 5, 4, 3, 2, 1, 1};
+    // erase
+    // all 1 erased
+    // ms.erase(1);
+    // occurrence of 1 in multiset
+    int cnt = ms.count(1);
+    cout << cnt << endl;
+    // one occurrence of 1 erased
+    // ms.erase(ms.find(1));
+
+    // deleting 2 occurrence of 1
+    for(int i = 0 ; i < 2 ; i++){
+        auto it = ms.find(1);
+        if(it != ms.end())
+            ms.erase(it);
+    }
+
+    cout << "size of multiset: " << ms.size() << endl;
+    for (auto &it : ms)
+        cout << it << ' ';
+    cout << endl;
+}
+void UnorderedSet()
+{
+    unordered_set <int> un_st = {7,3,8,7,8,3,4,6,7};
+    for(auto &it : un_st)
+        cout << it << ' ';
+    cout << endl;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -222,7 +292,11 @@ int main()
     // Deque();
     // Stack();
     // Queue();
-    Priority_queue();
+    // Priority_queue();
+    // Set();
+    // Multiset();
+    UnorderedSet();
+    
 
     return 0;
 }
