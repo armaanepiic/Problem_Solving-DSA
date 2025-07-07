@@ -261,9 +261,10 @@ void Multiset()
     // ms.erase(ms.find(1));
 
     // deleting 2 occurrence of 1
-    for(int i = 0 ; i < 2 ; i++){
+    for (int i = 0; i < 2; i++)
+    {
         auto it = ms.find(1);
-        if(it != ms.end())
+        if (it != ms.end())
             ms.erase(it);
     }
 
@@ -274,8 +275,8 @@ void Multiset()
 }
 void UnorderedSet()
 {
-    unordered_set <int> un_st = {7,3,8,7,8,3,4,6,7};
-    for(auto &it : un_st)
+    unordered_set<int> un_st = {7, 3, 8, 7, 8, 3, 4, 6, 7};
+    for (auto &it : un_st)
         cout << it << ' ';
     cout << endl;
 }
@@ -284,7 +285,7 @@ void Map()
     // map = {key, value}
     // log(n)
     // map store unique keys in sorted order
-    map <int, int> mp;
+    map<int, int> mp;
     int n;
     cin >> n;
     // for (int i = 0; i < n; i++)
@@ -301,17 +302,89 @@ void Map()
         cin >> x;
         m[x]++;
     }
-    for(auto &it : m) cout << it.first << ' ' << it.second << endl;
-    if(m.find(5) != m.end()) cout << "exist\n";
-    else cout << "Doesn't exist\n";
+    for (auto &it : m)
+        cout << it.first << ' ' << it.second << endl;
+    if (m.find(5) != m.end())
+        cout << "exist\n";
+    else
+        cout << "Doesn't exist\n";
 
     auto it = m.find(14);
-    if(it != m.end()) cout << it->first << ' ' << it->second << endl;
-    else cout << "nai\n";
+    if (it != m.end())
+        cout << it->first << ' ' << it->second << endl;
+    else
+        cout << "nai\n";
 
     // If you can see * in the type (like pair<int,int>*) → use ->
     // If it's an iterator → use -> (iterators act like pointers)
     // Everything else → use .
+}
+void Sort()
+{
+    int arr[6] = {6, 1, 4, 3, 8, 7};
+    // ascending order sorting
+    sort(arr, arr + 6);
+    // descendin order sorting
+    sort(arr, arr + 6, greater<int>());
+    for (auto it : arr)
+        cout << it << ' ';
+    cout << endl;
+    int n = 5;
+    vector<int> vec(n);
+    for (int i = 0; i < n; i++)
+        cin >> vec[i];
+    sort(vec.begin(), vec.end());
+    sort(vec.rbegin(), vec.rend());
+    for (auto &it : vec)
+        cout << it << ' ';
+    cout << endl;
+}
+bool comp(pair<int, int> p1, pair<int, int> p2)
+{
+    // if(p1.second < p2.second) return true;
+    // else if (p1.second > p2.second) return false;
+    // else if(p1.second == p1.second){
+    //     if(p1.first > p2.first) return true;
+    //     else return false;
+    // }
+    if (p1.second == p2.second)
+        return p1.first > p2.first;
+    else
+        return p1.second < p2.second;
+}
+void CustomSort()
+{
+    /*
+    -> sort according to the second element
+    -> if the second element is same
+    -> then sort it according to the first element
+    -> but in descending order
+    */
+    pair<int, int> a[] = {{1, 2}, {2, 1}, {4, 1}};
+    int n = 3;
+    sort(a, a + n, comp);
+    for (int i = 0; i < n; i++)
+        cout << a[i].first << ' ' << a[i].second << endl;
+}
+void NumberOfBits()
+{
+    int n = 6;
+    int bitsCnt = __builtin_popcount(n);
+    cout << bitsCnt << endl;
+    long long num = 165786578687;
+    bitsCnt = __builtin_popcount(num);
+    cout << bitsCnt << endl;
+
+}
+void Permutation()
+{
+    int cnt = 0;
+    string s = "1243";
+    do {
+        cout << s << endl;
+        cnt++;
+    } while (next_permutation(s.begin(), s.end()));
+    cout << "total permutations: " << cnt << endl;
     
 }
 int main()
@@ -330,8 +403,11 @@ int main()
     // Set();
     // Multiset();
     // UnorderedSet();
-    Map();
-    
+    // Map();
+    // Sort();
+    // CustomSort();
+    // NumberOfBits();
+    Permutation();
 
     return 0;
 }
