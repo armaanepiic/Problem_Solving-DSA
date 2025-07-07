@@ -407,7 +407,16 @@ int main()
     // Sort();
     // CustomSort();
     // NumberOfBits();
-    Permutation();
+    // Permutation();
+    vector <int> v = {1,2,3,4,5};
+    int maxi = *max_element(v.begin() , v.end());
+    int maxIndx = max_element(v.begin() , v.end()) - v.begin();
+    cout << "Maximum Element : " << maxi << endl;
+    int mini = *min_element(v.begin() , v.end());
+    int minIndx = min_element(v.begin() , v.end()) - v.begin();
+    cout << "Minimum Element : " << mini << endl;
+
+    cout << maxIndx << ' ' << minIndx;
 
     return 0;
 }
