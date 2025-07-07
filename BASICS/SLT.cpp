@@ -279,7 +279,41 @@ void UnorderedSet()
         cout << it << ' ';
     cout << endl;
 }
+void Map()
+{
+    // map = {key, value}
+    // log(n)
+    // map store unique keys in sorted order
+    map <int, int> mp;
+    int n;
+    cin >> n;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     int x, y;
+    //     cin >> x >> y;
+    //     mp.insert({x,y});
+    // }
+    // for(auto &it : mp) cout << it.first << ' ' << it.second << endl;
+    map<int, int> m;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        m[x]++;
+    }
+    for(auto &it : m) cout << it.first << ' ' << it.second << endl;
+    if(m.find(5) != m.end()) cout << "exist\n";
+    else cout << "Doesn't exist\n";
 
+    auto it = m.find(14);
+    if(it != m.end()) cout << it->first << ' ' << it->second << endl;
+    else cout << "nai\n";
+
+    // If you can see * in the type (like pair<int,int>*) → use ->
+    // If it's an iterator → use -> (iterators act like pointers)
+    // Everything else → use .
+    
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -295,7 +329,8 @@ int main()
     // Priority_queue();
     // Set();
     // Multiset();
-    UnorderedSet();
+    // UnorderedSet();
+    Map();
     
 
     return 0;
